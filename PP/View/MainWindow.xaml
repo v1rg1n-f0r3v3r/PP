@@ -7,14 +7,13 @@
         xmlns:mv="clr-namespace:PP.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <mv:ObjectViewModel/>
+    <Window.DataContext>    
+        <mv:ObjectViewModel></mv:ObjectViewModel>
     </Window.DataContext>
     <Grid>
-        <ListView ItemsSource="{Binding Items}">
+        <ListView ItemsSource="{Binding Objectz}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Date}">Дата</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Name}">Наименование</GridViewColumn>
                 </GridView>
             </ListView.View>

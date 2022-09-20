@@ -1,27 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Data;
+using PP.Model;
 
 namespace PP.ViewModel
 {
-    public class ObjectViewModel : DependencyObject
+    public class ObjectViewModel : INotifyPropertyChanged
     {
-        public ICollectionView Items
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName = null)
         {
-            get { return (ICollectionView)GetValue(ItemsProperty); }
-            set { SetValue(ItemsProperty, value); }
+            if (PropertyChanged != null)
+            {
+                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
-        public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ICollectionView), typeof(ObjectViewModel), new PropertyMetadata(null));
 
         public ObjectViewModel()
         {
-            Items = CollectionViewSource.GetDefaultView(Model.Objectz.GetObjects());
+            Objectz = new ObservableCollection<Objectz>(GetObj());
         }
+
+        public static IEnumerable<Objectz> GetObj()
+        {
+            return new Objectz[]
+            {
+                new Objectz
+                {
+                    Name = "Камера 1"
+                },
+                new Objectz
+                {
+                    Name = "Камера 2"
+                }
+            };
+        }
+        public ObservableCollection<Objectz> Objectz { get; set; }
     }
 }
