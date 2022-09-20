@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using PP.ViewModel;
+using System.Windows;
 
 namespace PP
 {
@@ -10,6 +11,7 @@ namespace PP
         public MainWindow()
         {
             InitializeComponent();
+            UC.DataContext = new CollectionsController();
         }
     }
 }

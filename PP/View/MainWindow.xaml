@@ -4,19 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PP"
-        xmlns:mv="clr-namespace:PP.ViewModel"
+        xmlns:uc="clr-namespace:PP"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>    
-        <mv:ObjectViewModel></mv:ObjectViewModel>
-    </Window.DataContext>
     <Grid>
-        <ListView ItemsSource="{Binding Objectz}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}">Наименование</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <uc:UserControlCameras x:Name="UC"></uc:UserControlCameras>
     </Grid>
 </Window>

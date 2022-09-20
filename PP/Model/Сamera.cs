@@ -1,7 +1,7 @@
 ﻿
 namespace PP.Model
 {
-    public class Objectz
+    public class Camera
     {
         private string _name;
 
