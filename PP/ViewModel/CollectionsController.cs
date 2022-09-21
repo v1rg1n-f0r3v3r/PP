@@ -5,23 +5,13 @@ using PP.Model;
 
 namespace PP.ViewModel
 {
-    public class CollectionsController : INotifyPropertyChanged
+    public class CollectionsController : PropertyChange
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName = null)
-        {
-            if (PropertyChanged != null)
-            {
-                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
         public CollectionsController()
         {
-            Camera = new ObservableCollection<Camera>(Collection.GetCam());
+            Cameras = new ObservableCollection<Camera>(Collection.GetCam());
         }
 
-        public ObservableCollection<Model.Camera> Camera { get; set; }
+        public ObservableCollection<Model.Camera> Cameras { get; set; }
     }
 }

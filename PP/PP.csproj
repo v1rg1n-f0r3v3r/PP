@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Model\Сamera.cs" />
     <Compile Include="ViewModel\CollectionsController.cs" />
+    <Compile Include="ViewModel\PropertyChange.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

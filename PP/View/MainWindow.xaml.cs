@@ -11,7 +11,7 @@ namespace PP
         public MainWindow()
         {
             InitializeComponent();
-            UC.DataContext = new CollectionsController();
+            UserControlCameras.DataContext = new CollectionsController();
         }
     }
 }
