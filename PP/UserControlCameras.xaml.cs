@@ -24,5 +24,17 @@ namespace PP
         {
             InitializeComponent();
         }
+
+        private void LoadMoreCameras(object sender, ScrollChangedEventArgs e)
+        {
+            var verticalOffSet = ScrollViewerCameras.VerticalOffset;
+            var maxVerticalOfSet = ScrollViewerCameras.ScrollableHeight;
+            if (verticalOffSet == maxVerticalOfSet)
+            {
+                var collectionController = (CollectionsController)DataContext;
+                if (collectionController.LoadMoreCamerasCommand.CanExecute(null))
+                { collectionController.LoadMoreCamerasCommand.Execute(null); }
+            }
+        }
     }
 }

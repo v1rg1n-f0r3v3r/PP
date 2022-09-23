@@ -1,4 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace PP.ViewModel
 {
@@ -6,7 +11,7 @@ namespace PP.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             if (PropertyChanged != null)
             {

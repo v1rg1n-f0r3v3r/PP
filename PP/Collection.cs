@@ -16,7 +16,155 @@ namespace PP
                 new Model.Camera
                 {
                     Name = "Камера 2"
-                }
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                    new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 2"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 2"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
+                new Model.Camera
+                {
+                    Name = "Камера 1"
+                },
             };
         }
     }
