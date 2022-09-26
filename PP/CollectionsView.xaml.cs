@@ -18,22 +18,23 @@ using System.Windows.Shapes;
 
 namespace PP
 {
-    public partial class UserControlCameras : UserControl
+    public partial class CollectionsView : UserControl
     {
-        public UserControlCameras()
+        public CollectionsView()
         {
             InitializeComponent();
         }
 
         private void LoadMoreCameras(object sender, ScrollChangedEventArgs e)
         {
-            var verticalOffSet = ScrollViewerCameras.VerticalOffset;
-            var maxVerticalOfSet = ScrollViewerCameras.ScrollableHeight;
+            ScrollViewer sb = e.OriginalSource as ScrollViewer;
+            var verticalOffSet = sb.VerticalOffset;
+            var maxVerticalOfSet = sb.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet)
             {
+                sb.ScrollToVerticalOffset(sb.VerticalOffset-20);
                 var collectionController = (CollectionsController)DataContext;
-                if (collectionController.LoadMoreCamerasCommand.CanExecute(null))
-                { collectionController.LoadMoreCamerasCommand.Execute(null); }
+                collectionController.LoadMoreCamerasCommand.Execute(null);
             }
         }
     }

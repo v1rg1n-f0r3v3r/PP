@@ -19,8 +19,8 @@ namespace PP.ViewModel
             Cameras = new ObservableCollection<Camera>(Collection.GetCam());
         }
         private static ObservableCollection<Camera> _cameras;
-        public static ObservableCollection<Model.Camera> Cameras 
-        { 
+        public static ObservableCollection<Model.Camera> Cameras
+        {
             get => _cameras;
             set
             {
@@ -38,14 +38,20 @@ namespace PP.ViewModel
                 return loadMoreCamerasCommand ??
                     (loadMoreCamerasCommand = new RelayCommand(obj =>
                     {
-                        for (int i = 1; i < 30; i++)
-                        {
-                            Camera camera = new Camera();
-                            camera.Name = "Камера "+i;
-                            Cameras.Add(camera);
-                        }
+                        AddCameras();
                     }));
             }
         }
+
+        void AddCameras()
+        {
+            for (int i = 1; i < 30; i++)
+            {
+                Camera camera = new Camera();
+                camera.Name = "Камера " + i;
+                Cameras.Add(camera);
+            }
+        }
+
     }
 }

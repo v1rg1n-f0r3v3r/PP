@@ -83,10 +83,10 @@
     </ApplicationDefinition>
     <Compile Include="Collection.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="UserControlCameras.xaml.cs">
-      <DependentUpon>UserControlCameras.xaml</DependentUpon>
+    <Compile Include="CollectionsView.xaml.cs">
+      <DependentUpon>CollectionsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="UserControlCameras.xaml">
+    <Page Include="CollectionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

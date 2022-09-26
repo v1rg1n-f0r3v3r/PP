@@ -113,7 +113,7 @@ namespace PP
                 {
                     Name = "Камера 1"
                 },
-                                new Model.Camera
+                new Model.Camera
                 {
                     Name = "Камера 1"
                 },
