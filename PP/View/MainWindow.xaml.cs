@@ -8,7 +8,6 @@ namespace PP
         public MainWindow()
         {
             InitializeComponent();
-            ViewModel.CollectionsController.getCollection = new CameraCollection();
             CollectionsView.DataContext = new CollectionsController();
         }
     }
