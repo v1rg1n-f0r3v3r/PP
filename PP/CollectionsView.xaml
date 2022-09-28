@@ -11,10 +11,17 @@
         <DataTemplate DataType="{x:Type model:Camera}">
             <TextBlock Text="{Binding Name}"></TextBlock>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type model:Phone}">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}"></TextBlock>
+                <TextBlock Background="Red" Text="{Binding Model}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
     
     <Grid>
-        <ListView ScrollViewer.ScrollChanged="LoadMoreCameras" x:Name="ListView" ItemsSource="{Binding Cameras}">
+        <ListView ScrollViewer.ScrollChanged="LoadMoreCameras" x:Name="ListView" ItemsSource="{Binding Collection}">
         </ListView>
     </Grid>
 </UserControl>

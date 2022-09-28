@@ -32,7 +32,7 @@ namespace PP
             var maxVerticalOfSet = sb.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet)
             {
-                sb.ScrollToVerticalOffset(sb.VerticalOffset-20);
+                sb.ScrollToVerticalOffset(sb.VerticalOffset - 20);
                 var collectionController = (CollectionsController)DataContext;
                 collectionController.LoadMoreCamerasCommand.Execute(null);
             }

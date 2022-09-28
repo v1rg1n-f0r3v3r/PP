@@ -8,50 +8,52 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using PP.Model;
 
 namespace PP.ViewModel
 {
     public class CollectionsController : PropertyChange
     {
+        public static ICollection getCollection;
+
         public CollectionsController()
         {
-            Cameras = new ObservableCollection<Camera>(Collection.GetCam());
-        }
-        private static ObservableCollection<Camera> _cameras;
-        public static ObservableCollection<Model.Camera> Cameras
-        {
-            get => _cameras;
-            set
+            _collection = new ObservableCollection<object>();
+            List<object> list = getCollection.GetCollection();
+            foreach (object item in list)
             {
-                var prop = new PropertyChange();
-                _cameras = value;
-
-                prop.OnPropertyChanged();
+                Collection.Add(item);
             }
         }
-        private RelayCommand loadMoreCamerasCommand;
+
         public RelayCommand LoadMoreCamerasCommand
         {
             get
             {
-                return loadMoreCamerasCommand ??
-                    (loadMoreCamerasCommand = new RelayCommand(obj =>
+            return loadMoreCamerasCommand ??
+                (loadMoreCamerasCommand = new RelayCommand(obj =>
+                {
+                    List<object> list = getCollection.LoadMore();
+                    Collection.Clear();
+                    foreach (object item in list)
                     {
-                        AddCameras();
-                    }));
+                        Collection.Add(item);
+                    }
+                }));
             }
         }
+        private RelayCommand loadMoreCamerasCommand;
 
-        void AddCameras()
+        private static ObservableCollection<object> _collection;
+        public static ObservableCollection<object> Collection
         {
-            for (int i = 1; i < 30; i++)
+            get { return _collection; }
+            set
             {
-                Camera camera = new Camera();
-                camera.Name = "Камера " + i;
-                Cameras.Add(camera);
+                var prop = new PropertyChange();
+                _collection = value;
+
+                prop.OnPropertyChanged();
             }
         }
-
     }
 }
