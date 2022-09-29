@@ -6,17 +6,9 @@
              xmlns:model="clr-namespace:PP.Model"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type model:Camera}">
             <TextBlock Text="{Binding Name}"></TextBlock>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type model:Phone}">
-            <StackPanel>
-                <TextBlock Text="{Binding Name}"></TextBlock>
-                <TextBlock Background="Red" Text="{Binding Model}"></TextBlock>
-            </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
     

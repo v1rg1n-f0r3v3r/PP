@@ -9,7 +9,6 @@ namespace PP
 {
     public interface ICollection
     {
-        List<object> GetCollection();
-        List<object> LoadMore();
+        List<Model.Camera> LoadCollection();
     }
 }

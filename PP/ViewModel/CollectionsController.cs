@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using GUISDK;
 
 namespace PP.ViewModel
 {
@@ -7,27 +9,26 @@ namespace PP.ViewModel
         public ICollection getCollection;
         public CollectionsController()
         {
-            getCollection = new CameraCollection();
-            var list = getCollection.GetCollection();
-            _collection = new ObservableCollection<object>(list);
+            _collection = new ObservableCollection<object>();
+            LoadMoreCommand = new RelayCommand(obj => {Load();});
+            if (getCollection == null)
+            {
+            }
+            else
+            { Load(); }
         }
 
-        public RelayCommand LoadMoreCamerasCommand
+        public RelayCommand LoadMoreCommand;
+
+        private async void Load()
         {
-            get
+            var list = await Task.Run(() => getCollection.LoadCollection());
+            foreach (var item in list)
             {
-            return loadMoreCamerasCommand ??
-                (loadMoreCamerasCommand = new RelayCommand( obj =>
-                {
-                    var list = getCollection.LoadMore();
-                    foreach (object item in list)
-                    {
-                        Collection.Add(item);
-                    }
-                }));
+                Collection.Add(item);
             }
+            //Collection.AddRange(list); эта функция у меня не работает,скорее всего какие-то проблемы с версией проекта и GUISDK
         }
-        private RelayCommand loadMoreCamerasCommand;
 
         private ObservableCollection<object> _collection;
         public ObservableCollection<object> Collection
