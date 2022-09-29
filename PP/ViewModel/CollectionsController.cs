@@ -6,16 +6,13 @@ namespace PP.ViewModel
 {
     public class CollectionsController : PropertyChange
     {
-        public ICollection getCollection;
-        public CollectionsController()
+        private ICollection getCollection;
+        public CollectionsController(ICollection _getCollection)
         {
-            _collection = new ObservableCollection<object>();
+            getCollection = _getCollection;
+            var list = getCollection.LoadCollection();
+            _collection = new ObservableCollection<object>(list);
             LoadMoreCommand = new RelayCommand(obj => {Load();});
-            if (getCollection == null)
-            {
-            }
-            else
-            { Load(); }
         }
 
         public RelayCommand LoadMoreCommand;

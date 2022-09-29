@@ -23,7 +23,7 @@ namespace PP
                 Camera camera = new  Camera();
                 camera.Name = "Камера " + i;
                 cameras.Add(camera);
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
             }
             return cameras;
         }
