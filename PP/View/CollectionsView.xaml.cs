@@ -21,5 +21,10 @@ namespace PP
                 collectionController.LoadMoreCommand.Execute(null);
             }
         }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.DataContext = new CollectionsController(new PersonCollection(), new PersonCollectionColumns());
+        }
     }
 }

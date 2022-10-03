@@ -4,6 +4,33 @@
              xmlns:local="clr-namespace:PP"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+
+        <SolidColorBrush x:Key="ListBox.Static.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="ListBox.Static.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="Transparent"/>
+        <Style x:Key="ListViewStyleNoneSV" TargetType="{x:Type ListView}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

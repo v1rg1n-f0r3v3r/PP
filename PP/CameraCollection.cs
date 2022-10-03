@@ -15,9 +15,9 @@ namespace PP
             count = 15;
         }
 
-        public List<Camera> LoadCollection()
+        public List<object> LoadCollection()
         {   
-            List<Camera> cameras = new List<Camera>();
+            List<object> cameras = new List<object>();
             for (int i = 1; i < count; i++)
             {
                 Camera camera = new  Camera();
