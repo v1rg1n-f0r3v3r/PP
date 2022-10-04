@@ -6,7 +6,45 @@
         xmlns:uc="clr-namespace:PP"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="DataGrid" x:Key="DataGridCamera">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="DataGrid" x:Key="DataGridUsers">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Фамилия" Binding="{Binding SurName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronomic}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateBirth}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <uc:CollectionsView x:Name="CollectionsView"></uc:CollectionsView>
+        <TabControl>
+            <TabItem Header="Камеры">
+                <uc:CollectionsView x:Name="CollectionsViewCamera"></uc:CollectionsView>
+            </TabItem>
+            <TabItem Header="Пользователи">
+                <uc:CollectionsView x:Name="CollectionsViewUsers"></uc:CollectionsView>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using PP.ViewModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace PP
@@ -10,7 +11,18 @@ namespace PP
             InitializeComponent();
         }
 
-    private void LoadMoreCameras(object sender, ScrollChangedEventArgs e)
+        public Style DataGridStyle
+        {
+            get { return (Style)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
+        }
+
+        public static readonly DependencyProperty MyPropertyProperty =
+           DependencyProperty.Register("DataGridStyle", typeof(Style), typeof(CollectionsView), new PropertyMetadata(new Style(typeof(DataGrid))));
+
+
+
+        private void LoadMoreCameras(object sender, ScrollChangedEventArgs e)
         {
             ScrollViewer sb = e.OriginalSource as ScrollViewer;
             var verticalOffSet = sb.VerticalOffset;
@@ -20,11 +32,6 @@ namespace PP
                 var collectionController = (CollectionsController)DataContext;
                 collectionController.LoadMoreCommand.Execute(null);
             }
-        }
-
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            this.DataContext = new CollectionsController(new PersonCollection(), new PersonCollectionColumns());
         }
     }
 }

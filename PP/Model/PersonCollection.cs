@@ -23,7 +23,7 @@ namespace PP
             {
                 Person person = new Person();
                 person.Name = "Василий";
-                person.SecondName = "Алексеев";
+                person.SurName = "Алексеев";
                 person.Patronomic = "Аркашевич";
                 person.DateBirth = "12.28.200" + i;
                 persons.Add(person);

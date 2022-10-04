@@ -4,40 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:model="clr-namespace:PP.Model"
+             xmlns:local="clr-namespace:PP"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <DataTemplate DataType="{x:Type model:CameraColumn}">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Margin="6 0 0 0" Text="{Binding NameColumn}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type model:Camera}">
-            <TextBlock FontSize="15" Text="{Binding Name}"></TextBlock>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type model:PersonColumns}">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Margin="11 0 0 0" Text="{Binding NameColumn}"></TextBlock>
-                <TextBlock FontSize="15" Margin="63 0 0 0" Text="{Binding SecondNameColumn}"></TextBlock>
-                <TextBlock FontSize="15" Margin="34 0 0 0" Text="{Binding PatronomicColumn}"></TextBlock>
-                <TextBlock FontSize="15" Margin="46 0 0 0" Text="{Binding DateBirthColumn}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type model:Person}">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Margin="6 0 0 0" Text="{Binding Name}"></TextBlock>
-                <TextBlock FontSize="15" Margin="40 0 0 0" Text="{Binding SecondName}"></TextBlock>
-                <TextBlock FontSize="15" Margin="40 0 0 0" Text="{Binding Patronomic}"></TextBlock>
-                <TextBlock FontSize="15" Margin="40 0 0 0" Text="{Binding DateBirth}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-    </UserControl.Resources>
-    
     <Grid>
-        <Button Panel.ZIndex="2" VerticalAlignment="Top" HorizontalAlignment="Right" Height="20" Width="100" Click="Button_Click"></Button>
-        <ItemsControl BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Top" Height="20" ItemsSource="{Binding CollectionColumns}" >
-        </ItemsControl>
-        <ListView Margin="0 20 0 0" ScrollViewer.ScrollChanged="LoadMoreCameras" x:Name="ListView" ItemsSource="{Binding Collection}">
-        </ListView>
+        <DataGrid ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreCameras">
+        </DataGrid>
     </Grid>
 </UserControl>

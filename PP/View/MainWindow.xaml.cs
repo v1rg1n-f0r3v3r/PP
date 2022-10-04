@@ -8,7 +8,10 @@ namespace PP
         public MainWindow()
         {
             InitializeComponent();
-            CollectionsView.DataContext = new CollectionsController(new CameraCollection(), new CameraCollectionColumns());
+            CollectionsViewCamera.DataContext = new CollectionsController(new CameraCollection());
+            CollectionsViewUsers.DataContext = new CollectionsController(new PersonCollection());
+            CollectionsViewCamera.DataGridStyle = TryFindResource("DataGridCamera") as Style;
+            CollectionsViewUsers.DataGridStyle = TryFindResource("DataGridUsers") as Style;
         }
     }
 }
