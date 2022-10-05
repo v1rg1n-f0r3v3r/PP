@@ -22,15 +22,15 @@ namespace PP
 
 
 
-        private void LoadMoreCameras(object sender, ScrollChangedEventArgs e)
+        private void LoadMoreList(object sender, ScrollChangedEventArgs e)
         {
-            ScrollViewer sb = e.OriginalSource as ScrollViewer;
-            var verticalOffSet = sb.VerticalOffset;
-            var maxVerticalOfSet = sb.ScrollableHeight;
+            ScrollViewer scrollViewer = e.OriginalSource as ScrollViewer;
+            var verticalOffSet = scrollViewer.VerticalOffset;
+            var maxVerticalOfSet = scrollViewer.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet)
             {
                 var collectionController = (CollectionsController)DataContext;
-                collectionController.LoadMoreCommand.Execute(null);
+                collectionController.loadMoreCommand.Execute(null);
             }
         }
     }
