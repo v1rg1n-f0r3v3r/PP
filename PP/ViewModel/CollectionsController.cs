@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using GUISDK;
-using GUISDK.Helpers;
 
 namespace PP.ViewModel
 {
@@ -13,7 +12,6 @@ namespace PP.ViewModel
             interfaceCollection = _interfaceCollection;
             var list = interfaceCollection.LoadCollection();
             _collection = new ObservableCollection<object>(list);
-            loadMoreCommand = new RelayCommand(obj => { Load(); });
         }
 
         private bool _isLoading;
@@ -24,7 +22,11 @@ namespace PP.ViewModel
                 OnPropertyChanged(nameof(IsLoading));}
         }
 
-        public RelayCommand loadMoreCommand;
+        private RelayCommand _loadMoreCommand;
+        public RelayCommand loadMoreCommand
+        {
+            get { return _loadMoreCommand = new RelayCommand(obj => { Load(); }); }
+        }
         private async void Load()
         {
             IsLoading = true;
