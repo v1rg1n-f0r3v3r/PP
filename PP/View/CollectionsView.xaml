@@ -13,10 +13,12 @@
     <UserControl.Resources>
         <view:VisibleConverter x:Key="VisibleConverter"></view:VisibleConverter>
     </UserControl.Resources>
-    
-    <Grid>
-        <DataGrid ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreList">
+
+    <Grid Background="White">
+        <DataGrid Margin="0 0 0 30" ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreList">
         </DataGrid>
-        <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=VisibleConverter}}"></contorls:LoadingSpinner>
+        <Viewbox VerticalAlignment="Bottom" Height="30">
+            <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=VisibleConverter}}"></contorls:LoadingSpinner>
+        </Viewbox>
     </Grid>
 </UserControl>

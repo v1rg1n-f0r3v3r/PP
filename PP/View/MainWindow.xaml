@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:uc="clr-namespace:PP" 
+        xmlns:uc="clr-namespace:PP"
+        xmlns:guisdkStyles="clr-namespace:GUISDK.Styles;assembly=GUISDK"
         xmlns:view="clr-namespace:PP.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -15,7 +16,13 @@
                     <ControlTemplate>
                         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Наименование">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </ControlTemplate>
@@ -28,10 +35,34 @@
                     <ControlTemplate>
                         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Фамилия" Binding="{Binding SurName}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronomic}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateBirth}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Имя">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Фамилия">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SurName}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Отчество">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Patronmic}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Отчество">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DateBirth}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </ControlTemplate>
@@ -44,11 +75,41 @@
                     <ControlTemplate>
                         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Ip адрес" Binding="{Binding Ip}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Название" Binding="{Binding Name}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Протокол" Binding="{Binding Protocol}"></DataGridTextColumn>
-                                <DataGridTextColumn MaxWidth="150" Header="Тип подключения" Binding="{Binding TypeConnection}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Порт" Binding="{Binding Port}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Ip">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Ip}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Название">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Протокол">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Protocol}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Тип подключения">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding TypeConnection}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Порт">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Port}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Состояние">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
