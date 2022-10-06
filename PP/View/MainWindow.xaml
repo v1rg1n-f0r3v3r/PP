@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:uc="clr-namespace:PP"
+        xmlns:uc="clr-namespace:PP" 
+        xmlns:view="clr-namespace:PP.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <view:VisibleConverter x:Key="VisibleConverter"></view:VisibleConverter>
         <Style TargetType="DataGrid" x:Key="DataGridCamera">
             <Setter Property="Template">
                 <Setter.Value>
@@ -36,6 +38,51 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="DataGrid" x:Key="DataGridServers">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Ip адрес" Binding="{Binding Ip}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Название" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Протокол" Binding="{Binding Protocol}"></DataGridTextColumn>
+                                <DataGridTextColumn MaxWidth="150" Header="Тип подключения" Binding="{Binding TypeConnection}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Порт" Binding="{Binding Port}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Состояние">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="50" Width="50" Visibility="{Binding IsAlive, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/live.jpg" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Кот?!?!">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="50" Width="50" Visibility="{Binding IsCat, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/cat.jpg" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Состояние хорошее">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="50" Width="50" Visibility="{Binding IsGood, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/good.png" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Состояние плохое">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="50" Width="50" Visibility="{Binding IsBad, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/bad.png" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <TabControl>
@@ -44,6 +91,9 @@
             </TabItem>
             <TabItem Header="Пользователи">
                 <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridUsers}" x:Name="CollectionsViewUsers"></uc:CollectionsView>
+            </TabItem>
+            <TabItem Header="Сервера">
+                <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridServers}" x:Name="CollectionsViewServers"></uc:CollectionsView>
             </TabItem>
         </TabControl>
     </Grid>

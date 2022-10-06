@@ -17,6 +17,6 @@
     <Grid>
         <DataGrid ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreList">
         </DataGrid>
-        <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=VisibleConverter} }"></contorls:LoadingSpinner>
+        <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=VisibleConverter}}"></contorls:LoadingSpinner>
     </Grid>
 </UserControl>
