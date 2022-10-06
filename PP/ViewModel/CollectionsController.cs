@@ -12,6 +12,7 @@ namespace PP.ViewModel
             interfaceCollection = _interfaceCollection;
             var list = interfaceCollection.LoadCollection();
             _collection = new ObservableCollection<object>(list);
+            _loadMoreCommand = new RelayCommand(obj => { Load(); });
         }
 
         private bool _isLoading;
@@ -25,7 +26,7 @@ namespace PP.ViewModel
         private RelayCommand _loadMoreCommand;
         public RelayCommand loadMoreCommand
         {
-            get { return _loadMoreCommand = new RelayCommand(obj => { Load(); }); }
+            get { return _loadMoreCommand; }
         }
         private async void Load()
         {

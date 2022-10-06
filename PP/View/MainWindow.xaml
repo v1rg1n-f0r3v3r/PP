@@ -40,10 +40,10 @@
     <Grid>
         <TabControl>
             <TabItem Header="Камеры">
-                <uc:CollectionsView x:Name="CollectionsViewCamera"></uc:CollectionsView>
+                <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridCamera}" x:Name="CollectionsViewCamera"></uc:CollectionsView>
             </TabItem>
             <TabItem Header="Пользователи">
-                <uc:CollectionsView x:Name="CollectionsViewUsers"></uc:CollectionsView>
+                <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridUsers}" x:Name="CollectionsViewUsers"></uc:CollectionsView>
             </TabItem>
         </TabControl>
     </Grid>

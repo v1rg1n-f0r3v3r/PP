@@ -18,13 +18,13 @@ namespace PP
         }
 
         public static readonly DependencyProperty MyPropertyProperty =
-           DependencyProperty.Register("DataGridStyle", typeof(Style), typeof(CollectionsView), new PropertyMetadata(new Style(typeof(DataGrid))));
+           DependencyProperty.Register(nameof(DataGridStyle), typeof(Style), typeof(CollectionsView), new PropertyMetadata(new Style(typeof(DataGrid))));
 
 
 
         private void LoadMoreList(object sender, ScrollChangedEventArgs e)
         {
-            ScrollViewer scrollViewer = e.OriginalSource as ScrollViewer;
+            var scrollViewer = e.OriginalSource as ScrollViewer;
             var verticalOffSet = scrollViewer.VerticalOffset;
             var maxVerticalOfSet = scrollViewer.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet)

@@ -10,8 +10,6 @@ namespace PP
             InitializeComponent();
             CollectionsViewCamera.DataContext = new CollectionsController(new CameraCollection());
             CollectionsViewUsers.DataContext = new CollectionsController(new PersonCollection());
-            CollectionsViewCamera.DataGridStyle = TryFindResource("DataGridCamera") as Style;
-            CollectionsViewUsers.DataGridStyle = TryFindResource("DataGridUsers") as Style;
         }
     }
 }
