@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:PP"
-        xmlns:guisdkStyles="clr-namespace:GUISDK.Styles;assembly=GUISDK"
         xmlns:view="clr-namespace:PP.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -14,12 +13,12 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Наименование">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding Name}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -33,33 +32,33 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Имя">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}"  Text="{Binding Name}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Фамилия">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding SurName}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}"  Text="{Binding SurName}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Отчество">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Patronmic}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}"  Text="{Binding Patronomic}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Отчество">
+                                <DataGridTemplateColumn Header="Дата рождения">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding DateBirth}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}"  Text="{Binding DateBirth}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -73,40 +72,40 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Ip">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Ip}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding Ip}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Название">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding Name}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Протокол">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Protocol}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding Protocol}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Тип подключения">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding TypeConnection}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding TypeConnection}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Порт">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Port}"/>
+                                            <TextBlock Style="{StaticResource TextBlockColumnStyle}" Text="{Binding Port}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
