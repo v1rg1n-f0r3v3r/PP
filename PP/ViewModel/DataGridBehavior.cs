@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Interactivity;
 using GUISDK;
 using System;
+using System.Data.Linq;
 
 namespace PP.ViewModel
 {
@@ -28,7 +29,8 @@ namespace PP.ViewModel
             var maxVerticalOfSet = scrollViewer.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet * 0.9 || verticalOffSet == maxVerticalOfSet)
             {
-                MessageBox.Show("Reach Bottom!");
+                var cameraVM = (CameraViewModel)AssociatedObject.DataContext;
+                cameraVM.loadMoreCommand.Execute(null);
             }
         }
 
