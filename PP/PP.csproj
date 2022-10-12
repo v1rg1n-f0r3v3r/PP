@@ -66,6 +66,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -88,16 +89,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\CameraCollection.cs" />
-    <Compile Include="ICollection.cs" />
+    <Compile Include="IListReceiver.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\PersonCollection.cs" />
     <Compile Include="Model\Server.cs" />
     <Compile Include="Model\ServerCollection.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewModel\CameraViewModel.cs" />
+    <Compile Include="ViewModel\DataGridBehavior.cs" />
+    <Compile Include="View\CamerasView.xaml.cs">
+      <DependentUpon>CamerasView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CollectionsView.xaml.cs">
       <DependentUpon>CollectionsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VisibleConverter.cs" />
+    <Page Include="View\CamerasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CollectionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

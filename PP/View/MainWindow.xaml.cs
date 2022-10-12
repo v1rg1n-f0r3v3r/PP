@@ -12,6 +12,7 @@ namespace PP
             CollectionsViewCamera.DataContext = new CollectionsController(new CameraCollection());
             CollectionsViewUsers.DataContext = new CollectionsController(new PersonCollection());
             CollectionsViewServers.DataContext = new CollectionsController(new ServerCollection());
+            CamerasView.DataContext = new CameraViewModel();
         }
     }
 }

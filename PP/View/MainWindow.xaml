@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:PP"
-        xmlns:view="clr-namespace:PP.View"
+        xmlns:ucameras="clr-namespace:PP.View"
         mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:custombehavior="clr-namespace:PP.ViewModel"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <view:VisibleConverter x:Key="VisibleConverter"></view:VisibleConverter>
         <Style TargetType="DataGrid" x:Key="DataGridCamera">
             <Setter Property="Template">
                 <Setter.Value>
@@ -112,28 +113,28 @@
                                 <DataGridTemplateColumn Header="Состояние">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Height="50" Width="50" Visibility="{Binding IsAlive, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/live.jpg" />
+                                            <Image Height="50" Width="50" Visibility="{Binding IsAlive, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}" Source="/Img/live.jpg" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Кот?!?!">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Height="50" Width="50" Visibility="{Binding IsCat, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/cat.jpg" />
+                                            <Image Height="50" Width="50" Visibility="{Binding IsCat, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}" Source="/Img/cat.jpg" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Состояние хорошее">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Height="50" Width="50" Visibility="{Binding IsGood, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/good.png" />
+                                            <Image Height="50" Width="50" Visibility="{Binding IsGood, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}" Source="/Img/good.png" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Состояние плохое">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Height="50" Width="50" Visibility="{Binding IsBad, Converter={StaticResource ResourceKey=VisibleConverter}}" Source="/Img/bad.png" />
+                                            <Image Height="50" Width="50" Visibility="{Binding IsBad, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}" Source="/Img/bad.png" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -146,14 +147,18 @@
     </Window.Resources>
     <Grid>
         <TabControl>
-            <TabItem Header="Камеры">
-                <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridCamera}" x:Name="CollectionsViewCamera"></uc:CollectionsView>
+            <TabItem Header="Камеры 2">
+                <ucameras:CamerasView x:Name="CamerasView">
+                </ucameras:CamerasView>
             </TabItem>
             <TabItem Header="Пользователи">
                 <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridUsers}" x:Name="CollectionsViewUsers"></uc:CollectionsView>
             </TabItem>
             <TabItem Header="Сервера">
                 <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridServers}" x:Name="CollectionsViewServers"></uc:CollectionsView>
+            </TabItem>
+            <TabItem Header="Камеры">
+                <uc:CollectionsView DataGridStyle="{StaticResource ResourceKey=DataGridCamera}" x:Name="CollectionsViewCamera"></uc:CollectionsView>
             </TabItem>
         </TabControl>
     </Grid>

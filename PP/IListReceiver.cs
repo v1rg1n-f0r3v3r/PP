@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PP
 {
-    public interface ICollection
+    public interface IListReceiver
     {
         List<object> LoadCollection();
     }

@@ -6,8 +6,8 @@ namespace PP.ViewModel
 {
     public class CollectionsController : PropertyChange
     {
-        readonly ICollection interfaceCollection;
-        public CollectionsController(ICollection _interfaceCollection)
+        readonly IListReceiver interfaceCollection;
+        public CollectionsController(IListReceiver _interfaceCollection)
         {
             interfaceCollection = _interfaceCollection;
             var list = interfaceCollection.LoadCollection();

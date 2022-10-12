@@ -1,18 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using PP.Model;
-using PP.ViewModel;
-using System.Threading.Tasks;
-using System.Windows.Threading;
 
 namespace PP
 {
-    public class CameraCollection: ICollection
+    public class CameraCollection: IListReceiver
     {
         int count = 0;
         public CameraCollection()
         {
-            count = 15;
+            count = 35;
         }
 
         public List<object> LoadCollection()

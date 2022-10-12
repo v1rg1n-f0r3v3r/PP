@@ -8,12 +8,12 @@ using System.Windows;
 
 namespace PP.Model
 {
-    public class ServerCollection : ICollection
+    public class ServerCollection : IListReceiver
     {
         int count = 0;
         public ServerCollection()
         {
-            count = 400;
+            count = 1;
         }
 
         public List<object> LoadCollection()

@@ -8,12 +8,12 @@ using PP.Model;
 
 namespace PP
 {
-    public class PersonCollection: ICollection
+    public class PersonCollection: IListReceiver
     {
         int count = 0;
         public PersonCollection()
         {
-            count = 400;
+            count = 1;
         }
 
         public List<object> LoadCollection()

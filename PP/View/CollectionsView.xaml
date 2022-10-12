@@ -4,25 +4,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:model="clr-namespace:PP.Model"
              xmlns:contorls="clr-namespace:GUISDK.Controls;assembly=GUISDK"
              xmlns:local="clr-namespace:PP" 
-             xmlns:view="clr-namespace:PP.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <view:VisibleConverter x:Key="VisibleConverter"></view:VisibleConverter>
-    </UserControl.Resources>
 
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreList">
+        <DataGrid EnableColumnVirtualization="True" EnableRowVirtualization="True" VirtualizingPanel.IsVirtualizing="True" Background="Transparent" Grid.Row="0" ItemsSource="{Binding Collection}" Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CollectionsView }}, Path=DataGridStyle}" ScrollViewer.ScrollChanged="LoadMoreList">
         </DataGrid>
         <Viewbox Grid.Row="1">
-            <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=VisibleConverter}}"></contorls:LoadingSpinner>
+            <contorls:LoadingSpinner HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}"></contorls:LoadingSpinner>
         </Viewbox>
     </Grid>
 </UserControl>
