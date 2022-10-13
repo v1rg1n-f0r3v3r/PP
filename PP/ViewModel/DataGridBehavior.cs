@@ -5,6 +5,7 @@ using System.Windows.Interactivity;
 using GUISDK;
 using System;
 using System.Data.Linq;
+using System.Windows.Input;
 
 namespace PP.ViewModel
 {
@@ -29,8 +30,7 @@ namespace PP.ViewModel
             var maxVerticalOfSet = scrollViewer.ScrollableHeight;
             if (verticalOffSet == maxVerticalOfSet * 0.9 || verticalOffSet == maxVerticalOfSet)
             {
-                var cameraVM = (CameraViewModel)AssociatedObject.DataContext;
-                cameraVM.loadMoreCommand.Execute(null);
+                DataGridLoadMoreCommand.Execute(null);
             }
         }
 
@@ -39,5 +39,14 @@ namespace PP.ViewModel
             _scrollViewer = AssociatedObject.FindChild<ScrollViewer>();
             _scrollViewer.ScrollChanged += AssociatedObjectScrollChanged;
         }
+
+        public ICommand DataGridLoadMoreCommand
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty CommandProperty =
+           DependencyProperty.Register(nameof(DataGridLoadMoreCommand), typeof(ICommand), typeof(DataGridBehavior), new PropertyMetadata(null));
     }
 }

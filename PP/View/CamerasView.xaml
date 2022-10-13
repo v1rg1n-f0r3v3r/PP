@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PP.View"
              mc:Ignorable="d"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:custombehavior="clr-namespace:PP.ViewModel"
@@ -25,7 +24,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
             <i:Interaction.Behaviors>
-                <custombehavior:DataGridBehavior></custombehavior:DataGridBehavior>
+                <custombehavior:DataGridBehavior DataGridLoadMoreCommand="{Binding loadMoreCommand}"></custombehavior:DataGridBehavior>
             </i:Interaction.Behaviors>
         </DataGrid>
         <Viewbox Grid.Row="1">
