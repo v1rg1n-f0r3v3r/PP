@@ -27,7 +27,7 @@ namespace PP
             var scrollViewer = e.OriginalSource as ScrollViewer;
             var verticalOffSet = scrollViewer.VerticalOffset;
             var maxVerticalOfSet = scrollViewer.ScrollableHeight;
-            if (verticalOffSet == maxVerticalOfSet * 0.9 || verticalOffSet == maxVerticalOfSet)
+            if (verticalOffSet >= maxVerticalOfSet * 0.9)
             {
                 var collectionController = (CollectionsController)DataContext;
                 collectionController.loadMoreCommand.Execute(null);
