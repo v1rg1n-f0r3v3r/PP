@@ -14,7 +14,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Background="Transparent" CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Наименование">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -33,7 +33,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Background="Transparent" CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Имя">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -73,7 +73,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <DataGrid CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
+                        <DataGrid Background="Transparent" CanUserAddRows="False" Style="{StaticResource DataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Ip">
                                     <DataGridTemplateColumn.CellTemplate>

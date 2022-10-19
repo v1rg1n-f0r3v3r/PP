@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace PP.ViewModel
 {
-    public class DataGridBehavior : Behavior<System.Windows.Controls.DataGrid>
+    public class DataGridScrollBehavior : Behavior<System.Windows.Controls.DataGrid>
     {
         ScrollViewer _scrollViewer;
         protected override void OnAttached()
@@ -47,6 +47,6 @@ namespace PP.ViewModel
         }
 
         public static readonly DependencyProperty CommandProperty =
-           DependencyProperty.Register(nameof(DataGridLoadMoreCommand), typeof(ICommand), typeof(DataGridBehavior), new PropertyMetadata(null));
+           DependencyProperty.Register(nameof(DataGridLoadMoreCommand), typeof(ICommand), typeof(DataGridScrollBehavior), new PropertyMetadata(null));
     }
 }

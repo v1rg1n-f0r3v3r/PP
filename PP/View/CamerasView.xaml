@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding CameraCollections}" Style="{StaticResource DataGridStyle}">
+        <DataGrid Background="Transparent" Grid.Row="0" ItemsSource="{Binding CameraCollections}" Style="{StaticResource DataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Наименование">
                     <DataGridTemplateColumn.CellTemplate>
@@ -24,7 +24,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
             <i:Interaction.Behaviors>
-                <custombehavior:DataGridBehavior DataGridLoadMoreCommand="{Binding loadMoreCommand}"></custombehavior:DataGridBehavior>
+                <custombehavior:DataGridScrollBehavior DataGridLoadMoreCommand="{Binding loadMoreCommand}"></custombehavior:DataGridScrollBehavior>
             </i:Interaction.Behaviors>
         </DataGrid>
         <Viewbox Grid.Row="1">
