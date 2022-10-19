@@ -13,7 +13,7 @@ namespace PP
         int count = 0;
         public PersonCollection()
         {
-            count = 1;
+            count = 20;
         }
 
         public List<object> LoadCollection()
@@ -27,7 +27,7 @@ namespace PP
                 person.Patronomic = "Аркашевич";
                 person.DateBirth = i.ToString();
                 persons.Add(person);
-                Thread.Sleep(10);
+                Thread.Sleep(100);
             }
             return persons;
         }

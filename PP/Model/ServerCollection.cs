@@ -13,7 +13,7 @@ namespace PP.Model
         int count = 0;
         public ServerCollection()
         {
-            count = 1;
+            count = 20;
         }
 
         public List<object> LoadCollection()
@@ -34,7 +34,7 @@ namespace PP.Model
                 server.IsBad = randomBool;
                 server.IsAlive = randomBool;
                 servers.Add(server);
-                Thread.Sleep(10);
+                Thread.Sleep(100);
             }
             return servers;
         }

@@ -9,7 +9,7 @@ namespace PP
         int count = 0;
         public CameraCollection()
         {
-            count = 35;
+            count = 20;
         }
 
         public List<object> LoadCollection()
